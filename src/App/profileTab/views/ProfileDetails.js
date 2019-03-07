@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
     },
     userImage: {
         borderColor: '#148F77',
-        borderRadius: 85,
         borderWidth: 3,
-        height: 170,
-        marginBottom: 15,
-        width: 170,
+        borderRadius: 60,
+        height: 120,
+        marginBottom: 10,
+        width: 120,
     },
     userNameText: {
         color: '#FFF',
