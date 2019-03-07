@@ -21,7 +21,7 @@ export default class ProfileDetails extends React.Component {
                         style={styles.headerBackgroundImage}
                         blurRadius={10}
                         source={
-                            require('../../../../assets/profile-banner.png')}>
+                            require('../../../../assets/banner.jpeg')}>
                         <View style={styles.headerColumn}>
                             <Image
                                 style={styles.userImage}
