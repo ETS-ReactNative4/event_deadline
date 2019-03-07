@@ -3,18 +3,21 @@
  */
 
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet} from 'react-native';
+import {Container} from "native-base";
+
 export default class ProfileDetails extends React.Component {
     render(){
         return(
-            <View style={{
-                flex:1,
-                backgroundColor:'red',
-                alignItems:'center',
-                justifyContent:'center'
-            }}>
-                <Text>{ 'ProfileDetails Screen ' }</Text>
-            </View>
+            <Container>
+                <View>
+
+                </View>
+            </Container>
         )
     }
 }
+
+const styles = StyleSheet({
+    
+})
