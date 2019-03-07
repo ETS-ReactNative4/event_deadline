@@ -12,7 +12,7 @@ import UpdateDetails from "../authTab/views/UpdateUser";
 
 const routeConfiguration = {
     ProfileDetails: { screen: ProfileDetails },
-    EventsForm: { screen: EditProfile }
+    EditProfile: { screen: EditProfile }
 }
 const stackNavigatorConfiguration = {
     headerMode: 'none',

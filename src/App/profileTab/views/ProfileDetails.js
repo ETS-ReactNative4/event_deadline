@@ -55,7 +55,7 @@ export default class ProfileDetails extends React.Component {
                 </View>
 
                 <ActionButton buttonColor="rgba(231,76,60,1)">
-                    <ActionButton.Item buttonColor='#9b59b6'title="Edit profile" onPress={() => this.props.navigation.goBack()}>
+                    <ActionButton.Item buttonColor='#9b59b6'title="Edit profile" onPress={() => this.props.navigation.navigate('EditProfile')}>
                         <IonIcon name="md-create" style={styles.actionButtonIcon} />
                     </ActionButton.Item>
                 </ActionButton>
