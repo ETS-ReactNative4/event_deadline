@@ -38,6 +38,7 @@ export const logoutUserSuccess = ()=>{
     }
 };
 
+
 export const loginUser = ({email, password})=>dispatch=>{
     authRef.signInWithEmailAndPassword(email, password)
         .then((resp) => {
@@ -87,4 +88,20 @@ export const createUser = ({email, password})=>dispatch=>{
         .catch((error) => {
             dispatch(createUserFailed(error.toString()));
         });
-}
+};
+
+//UPDATE USER
+
+export const updateUserSuccess = (resp)=>{
+    return {
+        type: UPDATE_USER_SUCCESS,
+        userDetails: resp
+    }
+};
+
+export const updateUserFailed = (resp)=>{
+    return {
+        type: UPDATE_USER_FAILED,
+        updateError: resp
+    }
+};
