@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { View, Text } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import { Container, Content, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 export default class ProfileEdit extends React.Component {
     render(){
         return(
@@ -27,6 +27,9 @@ export default class ProfileEdit extends React.Component {
                         </Button>
                     </Right>
                 </Header>
+                <Content>
+
+                </Content>
             </Container>
         )
     }
