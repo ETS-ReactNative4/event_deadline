@@ -38,6 +38,7 @@ class ProfileEdit extends React.Component {
         }
     }
     render() {
+        const {errors} = this.state;
         return (
             <Container>
                 <Header>
