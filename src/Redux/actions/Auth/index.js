@@ -12,12 +12,12 @@ import {
     LOGOUT_USER_FAILED,
     UPDATE_USER_SUCCESS,
     UPDATE_USER_FAILED
-}   from '../../constants/ActionTypes';
+} from '../../constants/ActionTypes';
 
-import {authRef} from '../../constants/utils/auth'
+import {authRef, dbRef} from '../../constants/utils/auth'
 
 
-export const loginUserSuccess = (resp)=>{
+export const loginUserSuccess = (resp) => {
     return {
         type: LOGIN_USER_SUCCESS,
         user: resp
@@ -25,21 +25,21 @@ export const loginUserSuccess = (resp)=>{
 };
 
 
-export const loginUserFail = (resp)=>{
+export const loginUserFail = (resp) => {
     return {
         type: LOGIN_USER_FAILED,
         error: resp
     }
 };
 
-export const logoutUserSuccess = ()=>{
+export const logoutUserSuccess = () => {
     return {
         type: LOGOUT_USER_SUCCESS
     }
 };
 
 
-export const loginUser = ({email, password})=>dispatch=>{
+export const loginUser = ({email, password}) => dispatch => {
     authRef.signInWithEmailAndPassword(email, password)
         .then((resp) => {
             return dispatch(loginUserSuccess(resp));
@@ -49,7 +49,7 @@ export const loginUser = ({email, password})=>dispatch=>{
         });
 }
 
-export const checkLoginState = ()=>dispatch=>{
+export const checkLoginState = () => dispatch => {
     authRef.onAuthStateChanged(user => {
         if (user) {
             return dispatch(loginUserSuccess(user));
@@ -60,27 +60,27 @@ export const checkLoginState = ()=>dispatch=>{
 
 };
 
-export const logoutUser = ()=>dispatch=>{
+export const logoutUser = () => dispatch => {
     return dispatch(logoutUserSuccess())
 };
 
 //CREATE USER
 
-export const createUserSuccess = (resp)=>{
+export const createUserSuccess = (resp) => {
     return {
-        type: CREATE_USER_SUCCESS ,
+        type: CREATE_USER_SUCCESS,
         user: resp
     }
 };
 
-export const createUserFailed = (resp)=>{
+export const createUserFailed = (resp) => {
     return {
         type: CREATE_USER_FAILED,
         error: resp
     }
 };
 
-export const createUser = ({email, password})=>dispatch=>{
+export const createUser = ({email, password}) => dispatch => {
     authRef.createUserWithEmailAndPassword(email, password)
         .then((resp) => {
             return dispatch(createUserSuccess(resp));
@@ -92,20 +92,33 @@ export const createUser = ({email, password})=>dispatch=>{
 
 //UPDATE USER
 
-export const updateUserSuccess = (resp)=>{
+export const updateUserSuccess = (resp) => {
     return {
         type: UPDATE_USER_SUCCESS,
         userDetails: resp
     }
 };
 
-export const updateUserFailed = (resp)=>{
+export const updateUserFailed = (resp) => {
     return {
         type: UPDATE_USER_FAILED,
         updateError: resp
     }
 };
 
-export const updateUser = (userDetails) => dispatch=>{
+export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) => dispatch => {
+    const userRef = dbRef.ref('users/' + uid)
+    userRef.set({
+        firstName,
+        lastName,
+        phone,
+        gender,
+        bio
+    }).then((data) => {
+        dispatch(updateUserSuccess(data));
+    })
+        .catch((error) => {
+            dispatch(updateUserFailed(error.toString()));
 
+        })
 };
