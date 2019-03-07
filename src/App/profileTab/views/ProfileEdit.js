@@ -39,5 +39,10 @@ class ProfileEdit extends React.Component {
 
 const mapStateToProps = (state) => {
     return {}
-}
-export default connect(mapStateToProps)(ProfileEdit);
+};
+
+const mapDispatchToProp = (dispatch) => {
+    return {}
+};
+
+export default connect(mapStateToProps, mapDispatchToProp)(ProfileEdit);
