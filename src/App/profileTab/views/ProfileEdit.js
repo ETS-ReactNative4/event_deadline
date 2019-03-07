@@ -37,7 +37,6 @@ class ProfileEdit extends React.Component {
             errors: {
             }
         }
-
         this.update = this.update.bind(this);
     }
     update(){
