@@ -8,7 +8,8 @@
 import React from 'react'
 import { View, Text } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
-export default class ProfileEdit extends React.Component {
+import {connect} from 'react-redux';
+ class ProfileEdit extends React.Component {
     render(){
         return(
             <Container>
@@ -34,3 +35,4 @@ export default class ProfileEdit extends React.Component {
         )
     }
 }
+export default connect()(ProfileEdit);
