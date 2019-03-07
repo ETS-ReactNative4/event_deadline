@@ -42,6 +42,9 @@ export default class ProfileDetails extends React.Component {
                                     </Text>
                                 </View>
                             </View>
+                            <View style={styles.userBioRow}>
+                                <Text style={styles.userBioText}>{bio}</Text>
+                            </View>
                         </View>
                     </ImageBackground>
                 </View>
@@ -89,6 +92,15 @@ const styles = StyleSheet.create({
         color: '#A5A5A5',
         fontSize: 15,
         fontWeight: '600',
+        textAlign: 'center',
+    },
+    userBioRow: {
+        marginLeft: 40,
+        marginRight: 40,
+    },
+    userBioText: {
+        color: 'gray',
+        fontSize: 13.5,
         textAlign: 'center',
     },
 })
