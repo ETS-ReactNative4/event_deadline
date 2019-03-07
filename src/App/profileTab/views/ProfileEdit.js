@@ -34,11 +34,6 @@ class ProfileEdit extends React.Component {
             gender: '',
             bio: '',
             errors: {
-                firstName: '',
-                lastName: '',
-                phone: '',
-                gender: '',
-                bio: ''
             }
         }
     }
