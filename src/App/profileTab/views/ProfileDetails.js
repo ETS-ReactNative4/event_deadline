@@ -2,7 +2,7 @@
  * Created by Raphael Karanja on 2019-03-03.
  */
 
-import React from 'react'
+import React from 'react';
 import {
     View,
     Text,
@@ -11,7 +11,9 @@ import {
     Image
 } from 'react-native';
 import {Container} from "native-base";
-import { Card, Icon } from 'react-native-elements'
+import {  Icon } from 'react-native-elements';
+import ActionButton from 'react-native-action-button';
+import IonIcon from 'react-native-vector-icons/Ionicons';
 export default class ProfileDetails extends React.Component {
     render() {
         return (
@@ -51,6 +53,12 @@ export default class ProfileDetails extends React.Component {
                     </View>
 
                 </View>
+
+                <ActionButton buttonColor="rgba(231,76,60,1)">
+                    <ActionButton.Item buttonColor='#9b59b6'title="Edit profile" onPress={() => this.props.navigation.goBack()}>
+                        <IonIcon name="md-create" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                </ActionButton>
             </Container>
         )
     }
@@ -106,5 +114,10 @@ const styles = StyleSheet.create({
         color: 'gray',
         fontSize: 13.5,
         textAlign: 'center',
+    },
+    actionButtonIcon: {
+        fontSize: 20,
+        height: 22,
+        color: 'white',
     },
 })
