@@ -105,3 +105,7 @@ export const updateUserFailed = (resp)=>{
         updateError: resp
     }
 };
+
+export const updateUser = (userDetails) => dispatch=>{
+
+};
