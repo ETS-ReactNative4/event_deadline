@@ -42,13 +42,14 @@ export default class ProfileDetails extends React.Component {
                                     </Text>
                                 </View>
                             </View>
-                            <View style={styles.userBioRow}>
-                                <Text style={styles.userBioText}>
-                                    Lead programmer with a track record of incorporating user and business requirements into cost-effective, secure and user-friendly solutions known for scalability and durability
-                                </Text>
-                            </View>
                         </View>
                     </ImageBackground>
+                    <View style={styles.userBioRow}>
+                        <Text style={styles.userBioText}>
+                            Lead programmer with a track record of incorporating user and business requirements into cost-effective, secure and user-friendly solutions known for scalability and durability
+                        </Text>
+                    </View>
+
                 </View>
             </Container>
         )
@@ -97,8 +98,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     userBioRow: {
-        marginLeft: 40,
-        marginRight: 40,
+        marginLeft: 20,
+        marginRight: 20,
+        marginTop: 20
     },
     userBioText: {
         color: 'gray',
