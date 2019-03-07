@@ -43,7 +43,9 @@ export default class ProfileDetails extends React.Component {
                                 </View>
                             </View>
                             <View style={styles.userBioRow}>
-                                <Text style={styles.userBioText}>{bio}</Text>
+                                <Text style={styles.userBioText}>
+                                    Lead programmer with a track record of incorporating user and business requirements into cost-effective, secure and user-friendly solutions known for scalability and durability
+                                </Text>
                             </View>
                         </View>
                     </ImageBackground>
