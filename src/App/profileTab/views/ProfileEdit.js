@@ -36,6 +36,11 @@ class ProfileEdit extends React.Component {
             errors: {
             }
         }
+
+        this.update = this.update.bind(this);
+    }
+    update(){
+
     }
     render() {
         const {errors} = this.state;
@@ -113,6 +118,14 @@ class ProfileEdit extends React.Component {
                             <Text style={styles.errorMessage}>{errors.bio} </Text>
                         </View>
 
+                        <Button
+                            style={{marginTop: 15}}
+                            full
+                            rounded
+                            success
+                            onPress={() => this.update()}>
+                            <Text style={{color: '#fff'}}>Update User</Text>
+                        </Button>
                     </Form>
                 </Content>
             </Container>
