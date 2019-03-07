@@ -6,18 +6,28 @@
  */
 
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text } from 'react-native';
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 export default class ProfileEdit extends React.Component {
     render(){
         return(
-            <View style={{
-                flex:1,
-                backgroundColor:'red',
-                alignItems:'center',
-                justifyContent:'center'
-            }}>
-                <Text>{ 'ProfileEdit Screen ' }</Text>
-            </View>
+            <Container>
+                <Header>
+                    <Left>
+                        <Button transparent>
+                            <Icon name='arrow-back' />
+                        </Button>
+                    </Left>
+                    <Body>
+                    <Title>Edit User</Title>
+                    </Body>
+                    <Right>
+                        <Button transparent>
+                            <Icon name='more' />
+                        </Button>
+                    </Right>
+                </Header>
+            </Container>
         )
     }
 }
