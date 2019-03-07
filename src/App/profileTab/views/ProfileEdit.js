@@ -14,7 +14,7 @@ export default class ProfileEdit extends React.Component {
             <Container>
                 <Header>
                     <Left>
-                        <Button transparent>
+                        <Button transparent onPress={()=>this.props.navigation.goBack()}>
                             <Icon name='arrow-back' />
                         </Button>
                     </Left>
