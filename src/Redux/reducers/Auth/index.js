@@ -9,7 +9,9 @@ import {
     FETCH_USER_SUCCESS,
     FETCH_USER_FAILED,
     LOGOUT_USER_SUCCESS,
-    LOGOUT_USER_FAILED
+    LOGOUT_USER_FAILED,
+    UPDATE_USER_SUCCESS,
+    UPDATE_USER_FAILED
 } from '../../constants/ActionTypes';
 
 let initialState = {
