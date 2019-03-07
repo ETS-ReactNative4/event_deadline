@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     userImage: {
-        borderColor: '#fff',
+        borderColor: '#148F77',
         borderRadius: 85,
         borderWidth: 3,
         height: 170,
