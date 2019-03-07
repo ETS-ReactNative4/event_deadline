@@ -28,6 +28,7 @@ class ProfileEdit extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            uid: this.props.auth.userId,
             firstName: '',
             lastName: '',
             phone: '',
@@ -133,8 +134,8 @@ class ProfileEdit extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {}
+const mapStateToProps = ({auth}) => {
+    return {auth}
 };
 
 const mapDispatchToProp = (dispatch) => {
