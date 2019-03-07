@@ -6,17 +6,18 @@
  */
 
 import React from 'react'
-import { View, Text } from 'react-native';
-import { Container, Content, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import {View, Text} from 'react-native';
+import {Container, Content, Header, Left, Body, Right, Button, Icon, Title} from 'native-base';
 import {connect} from 'react-redux';
- class ProfileEdit extends React.Component {
-    render(){
-        return(
+
+class ProfileEdit extends React.Component {
+    render() {
+        return (
             <Container>
                 <Header>
                     <Left>
-                        <Button transparent onPress={()=>this.props.navigation.goBack()}>
-                            <Icon name='arrow-back' />
+                        <Button transparent onPress={() => this.props.navigation.goBack()}>
+                            <Icon name='arrow-back'/>
                         </Button>
                     </Left>
                     <Body>
@@ -24,7 +25,7 @@ import {connect} from 'react-redux';
                     </Body>
                     <Right>
                         <Button transparent>
-                            <Icon name='more' />
+                            <Icon name='more'/>
                         </Button>
                     </Right>
                 </Header>
@@ -35,4 +36,8 @@ import {connect} from 'react-redux';
         )
     }
 }
-export default connect()(ProfileEdit);
+
+const mapStateToProps = (state) => {
+    return {}
+}
+export default connect(mapStateToProps)(ProfileEdit);
