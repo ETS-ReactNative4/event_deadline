@@ -103,7 +103,7 @@ class ProfileEdit extends React.Component {
                                 <Picker
                                     mode="dropdown"
                                     iosIcon={<Icon name="arrow-down" />}
-                                    style={{ width: undefined}}
+                                    style={{ alignSelf: 'stretch', flex: 1}}
                                     placeholder="Select your Gender"
                                     placeholderStyle={{ color: "#bfc6ea" }}
                                     placeholderIconColor="#007aff"
