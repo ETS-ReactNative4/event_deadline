@@ -98,19 +98,18 @@ class ProfileEdit extends React.Component {
                         </View>
 
                         <View>
-                            <Item floatingLabel picker>
-                                <Label>Gender </Label>
-
+                            <Item >
+                                <Label>Gender</Label>
                                 <Picker
                                     mode="dropdown"
                                     iosIcon={<Icon name="arrow-down" />}
-                                    style={{ width: undefined }}
+                                    style={{ width: undefined}}
                                     placeholder="Select your Gender"
                                     placeholderStyle={{ color: "#bfc6ea" }}
                                     placeholderIconColor="#007aff"
                                     selectedValue={this.state.gender}
                                     onValueChange={(gender) => this.setState({gender})}
-                                >
+                                    >
                                     <Picker.Item label="Female" value="female" />
                                     <Picker.Item label="Male" value="male" />
 
