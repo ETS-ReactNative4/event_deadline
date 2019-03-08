@@ -20,6 +20,7 @@ import {
     Item,
     Label,
     Input,
+    Picker,
     Form
 } from 'native-base';
 import {connect} from 'react-redux';
@@ -97,12 +98,23 @@ class ProfileEdit extends React.Component {
                         </View>
 
                         <View>
-                            <Item floatingLabel>
+                            <Item floatingLabel picker>
                                 <Label>Gender </Label>
-                                <Input
-                                    onChangeText={(gender) => this.setState({gender})}
-                                    autoCorrect={false}
-                                    autoCapitalize="none"/>
+
+                                <Picker
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="arrow-down" />}
+                                    style={{ width: undefined }}
+                                    placeholder="Select your Gender"
+                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                    placeholderIconColor="#007aff"
+                                    selectedValue={this.state.gender}
+                                    onValueChange={(gender) => this.setState({gender})}
+                                >
+                                    <Picker.Item label="Female" value="female" />
+                                    <Picker.Item label="Male" value="male" />
+
+                                </Picker>
                             </Item>
                             <Text style={styles.errorMessage}>{errors.gender} </Text>
                         </View>
