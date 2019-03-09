@@ -44,7 +44,7 @@ class ProfileEdit extends React.Component {
 
     userIsValid() {
         let isValid = true;
-        const {firstName, lastName, phone, gender, bio} = this.state;
+        const { firstName, lastName, phone, gender, bio} = this.state;
         let errors = {}
 
         if (firstName.length < 3) {
@@ -91,7 +91,7 @@ class ProfileEdit extends React.Component {
         if (!this.userIsValid()) {
             return;
         };
-        const {firstName, lastName, phone, gender, bio} = this.state;
+        const {uid, firstName, lastName, phone, gender, bio} = this.state;
         this.props.updateUser({firstName, lastName, phone, gender, bio} )
     }
 
