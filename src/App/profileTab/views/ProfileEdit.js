@@ -42,7 +42,7 @@ class ProfileEdit extends React.Component {
 
     userIsValid() {
         let isValid = true;
-        const {firstName, lastName, phone, gender,bio, errors} = this.state;
+        const {firstName, lastName, phone, gender, bio, errors} = this.state;
 
         if (firstName.length < 3) {
             errors.firstName = 'First Name is too short.';
@@ -63,6 +63,13 @@ class ProfileEdit extends React.Component {
             isValid = false;
         } else {
             errors.lastName = ''
+        }
+
+        if (gender) {
+            errors.gender = 'Gender is required.';
+            isValid = false;
+        } else {
+            errors.gender = ''
         }
 
 
