@@ -68,7 +68,7 @@ class ProfileEdit extends React.Component {
             errors.phone = ''
         }
 
-        if (gender) {
+        if (gender.length < 3) {
             errors.gender = 'Gender is required.';
             isValid = false;
         } else {
