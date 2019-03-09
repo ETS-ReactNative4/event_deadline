@@ -59,10 +59,10 @@ class ProfileEdit extends React.Component {
         }
 
         if (phone.length < 10) {
-            errors.lastName = 'Phone is too short.';
+            errors.phone = 'Phone is too short.';
             isValid = false;
         } else {
-            errors.lastName = ''
+            errors.phone = ''
         }
 
         if (gender) {
