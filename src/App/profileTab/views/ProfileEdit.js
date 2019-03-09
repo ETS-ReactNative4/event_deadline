@@ -42,7 +42,8 @@ class ProfileEdit extends React.Component {
 
     userIsValid() {
         let isValid = true;
-        const {firstName, lastName, phone, gender, bio, errors} = this.state;
+        const {firstName, lastName, phone, gender, bio} = this.state;
+        let errors = {}
 
         if (firstName.length < 3) {
             errors.firstName = 'First Name is too short.';
