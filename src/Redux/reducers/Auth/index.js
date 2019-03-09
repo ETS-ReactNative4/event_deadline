@@ -18,7 +18,9 @@ import {
 let initialState = {
     isLoggedIn: false,
     createUserError: '',
-    userId: ''
+    userId: '',
+    updateError: '',
+    userDetails: {}
 };
 
 export default (state = initialState, action) => {
@@ -34,7 +36,7 @@ export default (state = initialState, action) => {
         case CREATE_USER_FAILED :
             return {...state, createUserError: action.error};
         case UPDATE_USER_SUCCESS :
-            return {...state, userDetails: action.userDetails}
+            return {...state, userDetails: Object.assign({}, action.userDetails)}
         case UPDATE_USER_FAILED :
             return {...state, updateError: action.updateError}
         default:
