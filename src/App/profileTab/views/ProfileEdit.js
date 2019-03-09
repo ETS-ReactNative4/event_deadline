@@ -41,10 +41,12 @@ class ProfileEdit extends React.Component {
         this.update = this.update.bind(this);
     };
     userIsValid(){
-        
+
     }
     update(){
-
+        if (!this.userIsValid()){
+            return ;
+        }
     }
     render() {
         const {errors} = this.state;
