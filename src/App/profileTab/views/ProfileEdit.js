@@ -90,8 +90,9 @@ class ProfileEdit extends React.Component {
     update() {
         if (!this.userIsValid()) {
             return;
-        }
-
+        };
+        const {firstName, lastName, phone, gender, bio} = this.state;
+        this.props.updateUser({firstName, lastName, phone, gender, bio} )
     }
 
     render() {
