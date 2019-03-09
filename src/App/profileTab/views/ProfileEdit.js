@@ -72,6 +72,13 @@ class ProfileEdit extends React.Component {
             errors.gender = ''
         }
 
+        if (bio.length < 10) {
+            errors.bio = 'Bio is too short.';
+            isValid = false;
+        } else {
+            errors.bio = ''
+        }
+
 
         return isValid;
     }
