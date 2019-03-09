@@ -92,7 +92,7 @@ class ProfileEdit extends React.Component {
             return;
         };
         const {uid, firstName, lastName, phone, gender, bio} = this.state;
-        this.props.updateUser({firstName, lastName, phone, gender, bio} )
+        this.props.updateUser({uid, firstName, lastName, phone, gender, bio} )
     }
 
     render() {
