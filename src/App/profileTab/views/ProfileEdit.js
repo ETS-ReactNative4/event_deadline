@@ -7,6 +7,7 @@
 
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native';
+import {updateUser} from '../../../Redux/actions/Auth'
 import {
     Container,
     Content,
@@ -24,6 +25,7 @@ import {
     Form
 } from 'native-base';
 import {connect} from 'react-redux';
+import {bindActionCreators} from "redux";
 
 class ProfileEdit extends React.Component {
     constructor(props) {
@@ -89,6 +91,7 @@ class ProfileEdit extends React.Component {
         if (!this.userIsValid()) {
             return;
         }
+
     }
 
     render() {
@@ -203,7 +206,9 @@ const mapStateToProps = ({auth}) => {
 };
 
 const mapDispatchToProp = (dispatch) => {
-    return {}
+    return {
+        updateUser: bindActionCreators(updateUser, dispatch)
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProp)(ProfileEdit);
