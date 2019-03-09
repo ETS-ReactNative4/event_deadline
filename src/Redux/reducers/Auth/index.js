@@ -33,6 +33,7 @@ export default (state = initialState, action) => {
         case CREATE_USER_FAILED :
             return {...state, createUserError: action.error};
         case UPDATE_USER_SUCCESS :
+            return {...state, userDetails: action.userDetails}
         default:
             return state;
     }
