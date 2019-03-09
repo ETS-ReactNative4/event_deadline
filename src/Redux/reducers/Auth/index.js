@@ -11,7 +11,7 @@ import {
     LOGOUT_USER_SUCCESS,
     LOGOUT_USER_FAILED,
     UPDATE_USER_SUCCESS,
-
+    UPDATE_USER_FAILED
 
 } from '../../constants/ActionTypes';
 
@@ -36,7 +36,7 @@ export default (state = initialState, action) => {
         case CREATE_USER_FAILED :
             return {...state, createUserError: action.error};
         case UPDATE_USER_SUCCESS :
-            return {...state, userDetails: Object.assign({}, action.userDetails)}
+            return {...state, userDetails: Object.assign({}, action.userDetails)};
         case UPDATE_USER_FAILED :
             return {...state, updateError: action.updateError}
         default:
