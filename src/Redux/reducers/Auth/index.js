@@ -11,7 +11,8 @@ import {
     LOGOUT_USER_SUCCESS,
     LOGOUT_USER_FAILED,
     UPDATE_USER_SUCCESS,
-    UPDATE_USER_FAILED
+
+
 } from '../../constants/ActionTypes';
 
 let initialState = {
@@ -34,6 +35,8 @@ export default (state = initialState, action) => {
             return {...state, createUserError: action.error};
         case UPDATE_USER_SUCCESS :
             return {...state, userDetails: action.userDetails}
+        case UPDATE_USER_FAILED :
+            return {...state, updateError: action.updateError}
         default:
             return state;
     }
