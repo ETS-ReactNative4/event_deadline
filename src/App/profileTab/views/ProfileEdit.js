@@ -79,6 +79,8 @@ class ProfileEdit extends React.Component {
             errors.bio = ''
         }
 
+        this.setState({errors});
+
 
         return isValid;
     }
