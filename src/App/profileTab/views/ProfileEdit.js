@@ -26,7 +26,7 @@ import {
 import {connect} from 'react-redux';
 
 class ProfileEdit extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             uid: this.props.auth.userId,
@@ -35,19 +35,29 @@ class ProfileEdit extends React.Component {
             phone: '',
             gender: '',
             bio: '',
-            errors: {
-            }
+            errors: {}
         }
         this.update = this.update.bind(this);
     };
-    userIsValid(){
 
+    userIsValid() {
+        let isValid = true;
+        const {firstName, lastName, phone, gender,bio, errors} = this.state;
+        if (firstName.length > 3) {
+            errors.firstName = 'First Name is too short.';
+            isValid = false;
+        } else {
+            errors.firstName = ''
+        }
+        return isValid;
     }
-    update(){
-        if (!this.userIsValid()){
-            return ;
+
+    update() {
+        if (!this.userIsValid()) {
+            return;
         }
     }
+
     render() {
         const {errors} = this.state;
         return (
@@ -103,20 +113,20 @@ class ProfileEdit extends React.Component {
                         </View>
 
                         <View>
-                            <Item >
+                            <Item>
                                 <Label>Gender</Label>
                                 <Picker
                                     mode="dropdown"
-                                    iosIcon={<Icon name="arrow-down" />}
-                                    style={{ alignSelf: 'stretch', flex: 1}}
+                                    iosIcon={<Icon name="arrow-down"/>}
+                                    style={{alignSelf: 'stretch', flex: 1}}
                                     placeholder="Select your Gender"
-                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                    placeholderStyle={{color: "#bfc6ea"}}
                                     placeholderIconColor="#007aff"
                                     selectedValue={this.state.gender}
                                     onValueChange={(gender) => this.setState({gender})}
-                                    >
-                                    <Picker.Item label="Female" value="female" />
-                                    <Picker.Item label="Male" value="male" />
+                                >
+                                    <Picker.Item label="Female" value="female"/>
+                                    <Picker.Item label="Male" value="male"/>
 
                                 </Picker>
                             </Item>
