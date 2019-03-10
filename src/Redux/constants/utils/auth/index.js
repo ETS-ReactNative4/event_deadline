@@ -12,4 +12,5 @@ const databaseRef = firebase.database().ref();
 export const eventsRef = databaseRef.child("events");
 export const authRef = firebase.auth();
 export const dbRef = firebase.database();
+export const db = firebase.firestore();
 export const provider = new firebase.auth.GoogleAuthProvider();

@@ -14,7 +14,7 @@ import {
     UPDATE_USER_FAILED
 } from '../../constants/ActionTypes';
 
-import {authRef, dbRef} from '../../constants/utils/auth'
+import {authRef, dbRef, db} from '../../constants/utils/auth'
 
 
 export const loginUserSuccess = (resp) => {
