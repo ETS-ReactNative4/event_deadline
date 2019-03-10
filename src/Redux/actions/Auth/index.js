@@ -107,18 +107,31 @@ export const updateUserFailed = (resp) => {
 };
 
 export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) => dispatch => {
-    const userRef = dbRef.ref('users/' + uid)
-    userRef.set({
+    // const userRef = dbRef.ref('users/' + uid)
+    // userRef.set({
+    //     firstName,
+    //     lastName,
+    //     phone,
+    //     gender,
+    //     bio
+    // }).then((data) => {
+    //     dispatch(updateUserSuccess(data));
+    // })
+    //     .catch((error) => {
+    //         dispatch(updateUserFailed(error.toString()));
+    //
+    //     })
+
+    db.collection('users').doc(uid).add({
         firstName,
         lastName,
         phone,
         gender,
         bio
-    }).then((data) => {
-        dispatch(updateUserSuccess(data));
+    }).then(function(docRef) {
+        dispatch(updateUserSuccess(docRef));
     })
-        .catch((error) => {
+        .catch(function(error) {
             dispatch(updateUserFailed(error.toString()));
-
-        })
+        });
 };
