@@ -2,7 +2,7 @@
  * Created by Raphael Karanja on 2019-03-06.
  */
 import * as firebase from "firebase";
-
+import 'firebase/firestore';
 import { FirebaseConfig } from "./FireBaseConfig.js";
 if(!firebase.apps.length){
     firebase.initializeApp(FirebaseConfig);
