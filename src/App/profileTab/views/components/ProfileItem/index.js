@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     emailIcon: {
-        color: '#3496DC',
+        color: '#01C89E',
         fontSize: 30,
     },
     emailNameColumn: {
