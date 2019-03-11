@@ -65,13 +65,9 @@ class TabBarMain extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.props.auth.isLoggedIn && !this.props.auth.userDetails.firstName) {
+        if (this.props.auth.isLoggedIn && JSON.stringify(prevProps.auth.userDetails.firstName) === JSON.stringify(this.props.auth.userDetails.firstName)) {
             this.props.fetchUser(this.props.auth.userId);
-            // Alert.alert(
-            //     'Action Fired to fetch '+ this.props.auth.userId + ' details'
-            // );
         }
-        console.log(this.props.auth.userDetails)
     }
 
     render() {
