@@ -33,11 +33,11 @@ class ProfileEdit extends React.Component {
         const {firstName, lastName, phone, gender, bio} = this.props.auth.userDetails;
         this.state = {
             uid: this.props.auth.userId,
-            firstName: this.props.auth.userDetails.firstName,
-            lastName: this.props.auth.userDetails.lastName,
-            phone: this.props.auth.userDetails.phone,
-            gender: this.props.auth.userDetails.gender,
-            bio: this.props.auth.userDetails.bio,
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone,
+            gender: gender,
+            bio: bio,
             errors: {}
         }
         this.update = this.update.bind(this);
@@ -109,7 +109,7 @@ class ProfileEdit extends React.Component {
     }
 
     render() {
-        const {errors} = this.state;
+        const {errors, firstName, lastName, phone, gender, bio} = this.state;
         return (
             <Container>
                 <Header>
@@ -135,6 +135,7 @@ class ProfileEdit extends React.Component {
                                 <Input
                                     onChangeText={(firstName) => this.setState({firstName})}
                                     autoCorrect={false}
+                                    value={firstName}
                                     autoCapitalize="none"/>
                             </Item>
                             <Text style={styles.errorMessage}>{errors.firstName} </Text>
@@ -146,6 +147,7 @@ class ProfileEdit extends React.Component {
                                 <Input
                                     onChangeText={(lastName) => this.setState({lastName})}
                                     autoCorrect={false}
+                                    value={lastName}
                                     autoCapitalize="none"/>
                             </Item>
                             <Text style={styles.errorMessage}>{errors.lastName} </Text>
@@ -157,6 +159,7 @@ class ProfileEdit extends React.Component {
                                 <Input
                                     onChangeText={(phone) => this.setState({phone})}
                                     autoCorrect={false}
+                                    value={phone}
                                     autoCapitalize="none"/>
                             </Item>
                             <Text style={styles.errorMessage}>{errors.phone} </Text>
@@ -189,6 +192,7 @@ class ProfileEdit extends React.Component {
                                 <Input
                                     onChangeText={(bio) => this.setState({bio})}
                                     autoCorrect={false}
+                                    value={bio}
                                     autoCapitalize="none"/>
                             </Item>
                             <Text style={styles.errorMessage}>{errors.bio} </Text>
