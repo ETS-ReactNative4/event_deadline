@@ -107,7 +107,7 @@ export const updateUserFailed = (resp) => {
     }
 };
 
-export const updateUser = (details) =>dispatch=>  {
+export const updateUser = (details) => dispatch => {
     // const userRef = dbRef.ref('users/' + uid)
     // userRef.set({
     //     firstName,
@@ -122,10 +122,10 @@ export const updateUser = (details) =>dispatch=>  {
     //         dispatch(updateUserFailed(error.toString()));
     //
     //     })
-const {uid, firstName, lastName, phone, gender, bio} = details;
-    const userRef = dbRef.collection('users').doc(uid);
+    const {uid, firstName, lastName, phone, gender, bio} = details;
+    const userRef = db.collection('users').doc(uid);
     userRef.get()
-        .then(doc=>{
+        .then(doc => {
             if (!doc.exists) {
                 db.collection('users').add({
                     firstName,
@@ -133,10 +133,10 @@ const {uid, firstName, lastName, phone, gender, bio} = details;
                     phone,
                     gender,
                     bio
-                }).then(function(docRef) {
+                }).then(function (docRef) {
                     dispatch(updateUserSuccess(docRef));
                 })
-                    .catch(function(error) {
+                    .catch(function (error) {
                         dispatch(updateUserFailed(error.toString()));
                     });
             } else {
@@ -146,15 +146,15 @@ const {uid, firstName, lastName, phone, gender, bio} = details;
                     phone,
                     gender,
                     bio
-                }).then(function(docRef) {
+                }).then(function (docRef) {
                     dispatch(updateUserSuccess(docRef));
                 })
-                    .catch(function(error) {
+                    .catch(function (error) {
                         dispatch(updateUserFailed(error.toString()));
                     });
             }
         })
-        .catch(error=>{
+        .catch(error => {
 
         })
 
