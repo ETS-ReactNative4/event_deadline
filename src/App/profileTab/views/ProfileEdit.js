@@ -193,6 +193,8 @@ class ProfileEdit extends React.Component {
                                     onChangeText={(bio) => this.setState({bio})}
                                     autoCorrect={false}
                                     value={bio}
+                                    numberOfLines={5}
+                                    multiline={true}
                                     autoCapitalize="none"/>
                             </Item>
                             <Text style={styles.errorMessage}>{errors.bio} </Text>
