@@ -70,7 +70,7 @@ class ProfileDetails extends React.Component {
                 </View>
 
                 <View>
-                    <ProfileItem email={phone} name='email' icon='email'/>
+                    <ProfileItem email={phone} name='Personal Email' icon='email'/>
                 </View>
 
                 <ActionButton buttonColor="rgba(231,76,60,1)">
