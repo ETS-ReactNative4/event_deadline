@@ -70,12 +70,12 @@ class ProfileDetails extends React.Component {
 
                 </View>
 
-                <View>
-                    <ProfileItem email={email} name='Personal Email' icon='email'/>
+                <View style={styles.profileItemsRow}>
+                    <ProfileItem field={email} name='Personal Email' icon='email'/>
 
-                    <ProfileItem email={phone} name='Mobile' icon='call' rightIcon="textsms"/>
+                    <ProfileItem field={phone} name='Mobile' icon='call' rightIcon="textsms"/>
 
-                    <ProfileItem email={phone} name='Work' icon='call' rightIcon="textsms"/>
+                    <ProfileItem field={gender} name='Gender' icon='wc' rightIcon="textsms"/>
                 </View>
 
                 <ActionButton buttonColor="rgba(231,76,60,1)">
@@ -145,6 +145,9 @@ const styles = StyleSheet.create({
         height: 22,
         color: 'white',
     },
+    profileItemsRow: {
+        marginTop: 20
+    }
 });
 
 const mapStateToProps = ({auth}) => {

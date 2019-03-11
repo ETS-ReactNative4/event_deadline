@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        marginTop: 25,
-        paddingTop: 10,
-        paddingBottom: 10,
+        // marginTop: 25,
+        paddingTop: 15,
+        paddingBottom: 15,
         borderWidth: 0.5,
         borderColor: '#ECECEC',
     },
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     },
 })
 
-const Email = ({containerStyle, name, icon, email, rightIcon}) => (
+const Email = ({containerStyle, name, icon, field, rightIcon}) => (
     <TouchableOpacity>
         <View style={styles.container}>
             <View style={styles.iconRow}>
@@ -68,7 +68,7 @@ const Email = ({containerStyle, name, icon, email, rightIcon}) => (
             </View>
             <View style={styles.emailRow}>
                 <View style={styles.emailColumn}>
-                    <Text style={styles.emailText}>{email}</Text>
+                    <Text style={styles.emailText}>{field}</Text>
                 </View>
                 <View style={styles.emailNameColumn}>
                     <Text style={styles.emailNameText}>{name}</Text>

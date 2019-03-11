@@ -28,7 +28,10 @@ let initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case LOGIN_USER_SUCCESS :
-            return {...state, isLoggedIn: true, userId: action.user.uid, user: action.user};
+            let user = {};
+            user.email = action.user.email;
+            user.uid = action.user.uid
+            return {...state, isLoggedIn: true, userId: action.user.uid, user: Object.assign({}, user)};
         case LOGOUT_USER_FAILED:
             return {...state, isLoggedIn: false, userId: ''};
         case LOGOUT_USER_SUCCESS :
