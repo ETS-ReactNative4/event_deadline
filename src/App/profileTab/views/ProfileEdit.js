@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, Alert, StyleSheet} from 'react-native';
 import {updateUser} from '../../../Redux/actions/Auth'
 import {
     Container,
@@ -42,9 +42,18 @@ class ProfileEdit extends React.Component {
         this.update = this.update.bind(this);
     };
 
+    componentDidUpdate() {
+        const {auth}= this.props
+         if ( auth.updateError.length > 0) {
+             Alert.alert(
+                 auth.updateError
+             );
+         }
+    }
+
     userIsValid() {
         let isValid = true;
-        const { firstName, lastName, phone, gender, bio} = this.state;
+        const {firstName, lastName, phone, gender, bio} = this.state;
         let errors = {}
 
         if (firstName.length < 3) {
@@ -90,9 +99,10 @@ class ProfileEdit extends React.Component {
     update() {
         if (!this.userIsValid()) {
             return;
-        };
+        }
+        ;
         const {uid, firstName, lastName, phone, gender, bio} = this.state;
-        this.props.updateUser({uid, firstName, lastName, phone, gender, bio} )
+        this.props.updateUser({uid, firstName, lastName, phone, gender, bio})
     }
 
     render() {

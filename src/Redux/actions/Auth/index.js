@@ -100,6 +100,7 @@ export const updateUserSuccess = (resp) => {
 };
 
 export const updateUserFailed = (resp) => {
+    console.log(resp);
     return {
         type: UPDATE_USER_FAILED,
         updateError: resp
@@ -122,7 +123,7 @@ export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) => di
     //
     //     })
 
-    db.collection('users').doc(uid).add({
+    db.collection('users').add({
         firstName,
         lastName,
         phone,
