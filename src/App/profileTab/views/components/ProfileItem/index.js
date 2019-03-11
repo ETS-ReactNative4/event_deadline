@@ -16,6 +16,14 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         borderColor: '#ECECEC',
     },
+    smsIcon: {
+        color: 'gray',
+        fontSize: 30,
+    },
+    smsRow: {
+        flex: 2,
+        justifyContent: 'flex-start',
+    },
     emailColumn: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -65,6 +73,14 @@ const Email = ({containerStyle, name, icon, email}) => (
                 <View style={styles.emailNameColumn}>
                     <Text style={styles.emailNameText}>{name}</Text>
                 </View>
+            </View>
+
+            <View style={styles.smsRow}>
+                <Icon
+                    name="textsms"
+                    underlayColor="transparent"
+                    iconStyle={styles.smsIcon}
+                />
             </View>
         </View>
     </TouchableOpacity>
