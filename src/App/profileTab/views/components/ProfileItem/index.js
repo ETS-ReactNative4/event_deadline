@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     },
     emailNameText: {
         color: 'gray',
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: '200',
     },
     emailRow: {
