@@ -107,7 +107,7 @@ export const updateUserFailed = (resp) => {
     }
 };
 
-export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) => dispatch => {
+export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) =>  {
     // const userRef = dbRef.ref('users/' + uid)
     // userRef.set({
     //     firstName,
@@ -123,6 +123,10 @@ export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) => di
     //
     //     })
 
+
+};
+
+const updateDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
     db.collection('users').add({
         firstName,
         lastName,
@@ -135,4 +139,4 @@ export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) => di
         .catch(function(error) {
             dispatch(updateUserFailed(error.toString()));
         });
-};
+}
