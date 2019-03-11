@@ -20,8 +20,10 @@ import Email from './components/Email'
 class ProfileDetails extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
-    }
+        this.state = {
+            email: 'raphynje@gmail.com'
+
+        }    }
 
     componentDidMount() {
 
@@ -68,7 +70,7 @@ class ProfileDetails extends React.Component {
                 </View>
 
                 <View>
-                    <Email email={phone}/>
+                    <Email email={phone} name='email'/>
                 </View>
 
                 <ActionButton buttonColor="rgba(231,76,60,1)">
