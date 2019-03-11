@@ -30,13 +30,14 @@ import {bindActionCreators} from "redux";
 class ProfileEdit extends React.Component {
     constructor(props) {
         super(props);
+        const {firstName, lastName, phone, gender, bio} = this.props.auth.userDetails;
         this.state = {
             uid: this.props.auth.userId,
-            firstName: '',
-            lastName: '',
-            phone: '',
-            gender: '',
-            bio: '',
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone,
+            gender: gender,
+            bio: bio,
             errors: {}
         }
         this.update = this.update.bind(this);
@@ -51,8 +52,6 @@ class ProfileEdit extends React.Component {
         }
 
         if(auth.userDetails !==prevProps.auth.userDetails) this.props.navigation.goBack();
-        const {firstName, lastName, phone, gender, bio} = auth.userDetails;
-        this.setState({firstName, lastName, phone, gender, bio})
     }
 
     userIsValid() {
