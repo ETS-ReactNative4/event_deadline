@@ -42,13 +42,16 @@ class ProfileEdit extends React.Component {
         this.update = this.update.bind(this);
     };
 
-    componentDidUpdate() {
-        const {auth}= this.props
-         if ( auth.updateError.length > 0) {
-             Alert.alert(
-                 auth.updateError
-             );
-         }
+    componentDidUpdate(prevProps, prevState) {
+        const {auth}= this.props;
+        if(prevProps.auth.updateError !== auth && auth.updateError.length > 0) {
+            Alert.alert(
+                auth.updateError
+            );
+        }
+
+        if(auth.userDetails !==prevProps.auth.userDetails) this.props.navigation.goBack();
+
     }
 
     userIsValid() {
