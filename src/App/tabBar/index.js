@@ -9,6 +9,8 @@ import {AuthTabNavigator} from "../authTab";
 import React, {Component} from "react";
 import {connect} from 'react-redux';
 import Icon from "react-native-vector-icons/FontAwesome";
+import {bindActionCreators} from "redux";
+import {fetchUser} from '../../Redux/actions/Auth'
 
 const routeConfiguration = {
     Events: {
@@ -63,7 +65,7 @@ class TabBarMain extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (this.props.auth.isLoggedIn && prevProps.auth.userDetails === this.props.userDetails) {
-
+            this.props.fetchUser(this.props.auth.uid);
         }
     }
 
@@ -89,7 +91,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        fetchUser: bindActionCreators(fetchUser, dispatch)
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TabBarMain)
