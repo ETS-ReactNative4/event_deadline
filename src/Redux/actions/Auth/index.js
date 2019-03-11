@@ -108,20 +108,7 @@ export const updateUserFailed = (resp) => {
 };
 
 export const updateUser = (details) => dispatch => {
-    // const userRef = dbRef.ref('users/' + uid)
-    // userRef.set({
-    //     firstName,
-    //     lastName,
-    //     phone,
-    //     gender,
-    //     bio
-    // }).then((data) => {
-    //     dispatch(updateUserSuccess(data));
-    // })
-    //     .catch((error) => {
-    //         dispatch(updateUserFailed(error.toString()));
-    //
-    //     })
+
     const {uid, firstName, lastName, phone, gender, bio} = details;
     const userRef = db.collection('users').doc(uid);
     userRef.get()
@@ -162,32 +149,3 @@ export const updateUser = (details) => dispatch => {
 
 };
 
-// const addDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
-//     db.collection('users').add({
-//         firstName,
-//         lastName,
-//         phone,
-//         gender,
-//         bio
-//     }).then(function(docRef) {
-//         dispatch(updateUserSuccess(docRef));
-//     })
-//         .catch(function(error) {
-//             dispatch(updateUserFailed(error.toString()));
-//         });
-// }
-//
-// const updateDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
-//     db.collection('users').add({
-//         firstName,
-//         lastName,
-//         phone,
-//         gender,
-//         bio
-//     }).then(function(docRef) {
-//         dispatch(updateUserSuccess(docRef));
-//     })
-//         .catch(function(error) {
-//             dispatch(updateUserFailed(error.toString()));
-//         });
-// }
