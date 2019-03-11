@@ -20,7 +20,8 @@ let initialState = {
     createUserError: '',
     userId: '',
     updateError: '',
-    userDetails: {}
+    userDetails: {},
+    fetchUserError: ''
 };
 
 export default (state = initialState, action) => {
@@ -38,7 +39,11 @@ export default (state = initialState, action) => {
         case UPDATE_USER_SUCCESS :
             return {...state, userDetails: Object.assign({}, action.userDetails)};
         case UPDATE_USER_FAILED :
-            return {...state, updateError: action.updateError}
+            return {...state, updateError: action.updateError};
+        case FETCH_USER_SUCCESS:
+            return {...state, userDetails: Object.assign({}, action.userDetails)};
+        case FETCH_USER_FAILED:
+            return {...state, fetchUserError: action.error};
         default:
             return state;
     }
