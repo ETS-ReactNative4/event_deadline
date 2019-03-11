@@ -140,7 +140,8 @@ export const updateUser = (details) => dispatch => {
                         dispatch(updateUserFailed(error.toString()));
                     });
             } else {
-                db.collection('users').add({
+                const userRef = db.collection('users').doc(uid);
+                userRef.update({
                     firstName,
                     lastName,
                     phone,
