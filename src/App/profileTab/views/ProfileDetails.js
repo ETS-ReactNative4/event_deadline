@@ -15,6 +15,7 @@ import {Icon} from 'react-native-elements';
 import ActionButton from 'react-native-action-button';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux';
+import Email from './components/Email'
 
 class ProfileDetails extends React.Component {
     constructor(props) {
@@ -64,6 +65,10 @@ class ProfileDetails extends React.Component {
                         </Text>
                     </View>
 
+                </View>
+
+                <View>
+                    <Email email={phone}/>
                 </View>
 
                 <ActionButton buttonColor="rgba(231,76,60,1)">
