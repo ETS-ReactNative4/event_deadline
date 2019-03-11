@@ -11,10 +11,15 @@ import {
     Image
 } from 'react-native';
 import {Container} from "native-base";
-import {  Icon } from 'react-native-elements';
+import {Icon} from 'react-native-elements';
 import ActionButton from 'react-native-action-button';
 import IonIcon from 'react-native-vector-icons/Ionicons';
+
 export default class ProfileDetails extends React.Component {
+    componentDidMount() {
+
+    }
+
     render() {
         return (
             <Container>
@@ -48,15 +53,17 @@ export default class ProfileDetails extends React.Component {
                     </ImageBackground>
                     <View style={styles.userBioRow}>
                         <Text style={styles.userBioText}>
-                            Lead programmer with a track record of incorporating user and business requirements into cost-effective, secure and user-friendly solutions known for scalability and durability
+                            Lead programmer with a track record of incorporating user and business requirements into
+                            cost-effective, secure and user-friendly solutions known for scalability and durability
                         </Text>
                     </View>
 
                 </View>
 
                 <ActionButton buttonColor="rgba(231,76,60,1)">
-                    <ActionButton.Item buttonColor='#9b59b6'title="Edit profile" onPress={() => this.props.navigation.navigate('EditProfile')}>
-                        <IonIcon name="md-create" style={styles.actionButtonIcon} />
+                    <ActionButton.Item buttonColor='#9b59b6' title="Edit profile"
+                                       onPress={() => this.props.navigation.navigate('EditProfile')}>
+                        <IonIcon name="md-create" style={styles.actionButtonIcon}/>
                     </ActionButton.Item>
                 </ActionButton>
             </Container>

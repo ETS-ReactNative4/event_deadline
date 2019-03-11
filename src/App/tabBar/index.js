@@ -61,6 +61,12 @@ class TabBarMain extends Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.auth.isLoggedIn && prevProps.auth.userDetails === this.props.userDetails) {
+
+        }
+    }
+
     render() {
         const {isLoggedIn} = this.props.auth;
         if (!isLoggedIn) {
@@ -82,4 +88,8 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(TabBarMain)
+const mapDispatchToProps = (dispatch) => {
+    return {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TabBarMain)
