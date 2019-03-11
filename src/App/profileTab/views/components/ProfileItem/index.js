@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     },
 })
 
-const Email = ({containerStyle, name, icon, email}) => (
+const Email = ({containerStyle, name, icon, email, rightIcon}) => (
     <TouchableOpacity>
         <View style={styles.container}>
             <View style={styles.iconRow}>
@@ -75,13 +75,15 @@ const Email = ({containerStyle, name, icon, email}) => (
                 </View>
             </View>
 
-            <View style={styles.smsRow}>
-                <Icon
-                    name="textsms"
-                    underlayColor="transparent"
-                    iconStyle={styles.smsIcon}
-                />
-            </View>
+            { rightIcon.length > 0 ?
+                <View style={styles.smsRow}>
+                    <Icon
+                        name={rightIcon}
+                        underlayColor="transparent"
+                        iconStyle={styles.smsIcon}
+                    />
+                </View> : ''
+            }
         </View>
     </TouchableOpacity>
 )
