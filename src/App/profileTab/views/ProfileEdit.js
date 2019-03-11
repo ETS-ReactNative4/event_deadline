@@ -51,7 +51,8 @@ class ProfileEdit extends React.Component {
         }
 
         if(auth.userDetails !==prevProps.auth.userDetails) this.props.navigation.goBack();
-
+        const {firstName, lastName, phone, gender, bio} = auth.userDetails;
+        this.setState({firstName, lastName, phone, gender, bio})
     }
 
     userIsValid() {
