@@ -21,7 +21,8 @@ let initialState = {
     userId: '',
     updateError: '',
     userDetails: {},
-    fetchUserError: ''
+    fetchUserError: '',
+    user: {}
 };
 
 export default (state = initialState, action) => {

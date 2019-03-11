@@ -31,6 +31,7 @@ class ProfileDetails extends React.Component {
 
     render() {
         const {firstName, lastName, phone, gender, bio}=this.props.auth.userDetails;
+        const {email}=this.props.auth.user;
         return (
             <Container>
                 <View>
@@ -70,7 +71,7 @@ class ProfileDetails extends React.Component {
                 </View>
 
                 <View>
-                    <ProfileItem email={phone} name='Personal Email' icon='email'/>
+                    <ProfileItem email={email} name='Personal Email' icon='email'/>
 
                     <ProfileItem email={phone} name='Mobile' icon='call' rightIcon="textsms"/>
 
