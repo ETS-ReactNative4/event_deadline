@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
     },
 })
 
-const Email = ({containerStyle, name, email}) => (
+const Email = ({containerStyle, name, icon, email}) => (
     <TouchableOpacity>
         <View style={styles.container}>
             <View style={styles.iconRow}>
                 <Icon
-                    name="email"
+                    name={icon}
                     underlayColor="transparent"
                     iconStyle={styles.emailIcon}
                 />
