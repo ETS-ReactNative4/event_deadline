@@ -33,11 +33,11 @@ class ProfileEdit extends React.Component {
         const {firstName, lastName, phone, gender, bio} = this.props.auth.userDetails;
         this.state = {
             uid: this.props.auth.userId,
-            firstName: firstName,
-            lastName: lastName,
-            phone: phone,
-            gender: gender,
-            bio: bio,
+            firstName: this.props.auth.userDetails.firstName,
+            lastName: this.props.auth.userDetails.lastName,
+            phone: this.props.auth.userDetails.phone,
+            gender: this.props.auth.userDetails.gender,
+            bio: this.props.auth.userDetails.bio,
             errors: {}
         }
         this.update = this.update.bind(this);

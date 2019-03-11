@@ -169,7 +169,7 @@ export const fetchUser = (uid) => dispatch =>{
     userRef.get()
         .then(doc => {
             if(doc.exists){
-                dispatch(fetchUserSuccess(doc));
+                dispatch(fetchUserSuccess(doc.data()));
             }else{
                 dispatch(fetchUserSuccess({}));
             }

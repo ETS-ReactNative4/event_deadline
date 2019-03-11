@@ -11,6 +11,7 @@ import {connect} from 'react-redux';
 import Icon from "react-native-vector-icons/FontAwesome";
 import {bindActionCreators} from "redux";
 import {fetchUser} from '../../Redux/actions/Auth'
+import {Alert} from "react-native";
 
 const routeConfiguration = {
     Events: {
@@ -64,9 +65,13 @@ class TabBarMain extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.props.auth.isLoggedIn && prevProps.auth.userDetails === this.props.userDetails) {
-            this.props.fetchUser(this.props.auth.uid);
+        if (this.props.auth.isLoggedIn && !this.props.auth.userDetails.firstName) {
+            this.props.fetchUser(this.props.auth.userId);
+            // Alert.alert(
+            //     'Action Fired to fetch '+ this.props.auth.userId + ' details'
+            // );
         }
+        console.log(this.props.auth.userDetails)
     }
 
     render() {
