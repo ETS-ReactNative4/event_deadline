@@ -82,7 +82,7 @@ const Email = ({containerStyle, name, icon, email, rightIcon}) => (
                         underlayColor="transparent"
                         iconStyle={styles.smsIcon}
                     />
-                </View> : ''
+                </View> : <View/>
             }
         </View>
     </TouchableOpacity>
