@@ -126,6 +126,21 @@ export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) =>  {
 
 };
 
+const addDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
+    db.collection('users').add({
+        firstName,
+        lastName,
+        phone,
+        gender,
+        bio
+    }).then(function(docRef) {
+        dispatch(updateUserSuccess(docRef));
+    })
+        .catch(function(error) {
+            dispatch(updateUserFailed(error.toString()));
+        });
+}
+
 const updateDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
     db.collection('users').add({
         firstName,
