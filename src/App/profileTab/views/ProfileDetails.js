@@ -27,6 +27,7 @@ class ProfileDetails extends React.Component {
     }
 
     render() {
+        const {firstName, lastName, phone, gender, bio}=this.props.auth.userDetails;
         return (
             <Container>
                 <View>
@@ -139,5 +140,5 @@ const mapStateToProps = ({auth}) => {
     return {
         auth
     }
-}
+};
 export default connect(mapStateToProps)(ProfileDetails);
