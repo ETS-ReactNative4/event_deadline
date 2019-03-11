@@ -149,3 +149,33 @@ export const updateUser = (details) => dispatch => {
 
 };
 
+
+//FETCH USER
+export const fetchUserSuccess = (resp) => {
+    return {
+        type: FETCH_USER_SUCCESS,
+        userDetails: resp
+    }
+}
+export const fetchUserError = (resp) => {
+    return {
+        type: FETCH_USER_FAILED,
+        error: resp
+    }
+};
+
+export const fetchUser = (uid) => dispatch =>{
+    const userRef = db.collection('users').doc(uid);
+    userRef.get()
+        .then(doc => {
+            if(doc.exists){
+                dispatch(fetchUserSuccess(doc));
+            }else{
+                dispatch(fetchUserSuccess({}));
+            }
+        })
+        .catch(error=>{
+            dispatch(fetchUserError(error.toString()));
+        })
+}
+
