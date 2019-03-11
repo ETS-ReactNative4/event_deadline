@@ -14,12 +14,14 @@ import {Container} from "native-base";
 import {Icon} from 'react-native-elements';
 import ActionButton from 'react-native-action-button';
 import IonIcon from 'react-native-vector-icons/Ionicons';
+import {connect} from 'react-redux';
 
-export default class ProfileDetails extends React.Component {
-    constructor(props){
+class ProfileDetails extends React.Component {
+    constructor(props) {
         super(props);
-        this.state ={}
+        this.state = {}
     }
+
     componentDidMount() {
 
     }
@@ -131,4 +133,6 @@ const styles = StyleSheet.create({
         height: 22,
         color: 'white',
     },
-})
+});
+
+export default connect()(ProfileDetails);
