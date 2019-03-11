@@ -135,4 +135,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default connect()(ProfileDetails);
+const mapStateToProps = (state) => {
+    return {}
+}
+export default connect(mapStateToProps)(ProfileDetails);
