@@ -107,7 +107,7 @@ export const updateUserFailed = (resp) => {
     }
 };
 
-export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) =>  {
+export const updateUser = (details: {uid, firstName, lastName, phone, gender, bio}) =>dispatch=>  {
     // const userRef = dbRef.ref('users/' + uid)
     // userRef.set({
     //     firstName,
@@ -123,35 +123,70 @@ export const updateUser = ({uid, firstName, lastName, phone, gender, bio}) =>  {
     //
     //     })
 
+    const userRef = dbRef.collection('users').doc(uid);
+    userRef.get()
+        .then(doc=>{
+            if (!doc.exists) {
+                db.collection('users').add({
+                    firstName,
+                    lastName,
+                    phone,
+                    gender,
+                    bio
+                }).then(function(docRef) {
+                    dispatch(updateUserSuccess(docRef));
+                })
+                    .catch(function(error) {
+                        dispatch(updateUserFailed(error.toString()));
+                    });
+            } else {
+                db.collection('users').add({
+                    firstName,
+                    lastName,
+                    phone,
+                    gender,
+                    bio
+                }).then(function(docRef) {
+                    dispatch(updateUserSuccess(docRef));
+                })
+                    .catch(function(error) {
+                        dispatch(updateUserFailed(error.toString()));
+                    });
+            }
+        })
+        .catch(error=>{
+
+        })
+
 
 };
 
-const addDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
-    db.collection('users').add({
-        firstName,
-        lastName,
-        phone,
-        gender,
-        bio
-    }).then(function(docRef) {
-        dispatch(updateUserSuccess(docRef));
-    })
-        .catch(function(error) {
-            dispatch(updateUserFailed(error.toString()));
-        });
-}
-
-const updateDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
-    db.collection('users').add({
-        firstName,
-        lastName,
-        phone,
-        gender,
-        bio
-    }).then(function(docRef) {
-        dispatch(updateUserSuccess(docRef));
-    })
-        .catch(function(error) {
-            dispatch(updateUserFailed(error.toString()));
-        });
-}
+// const addDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
+//     db.collection('users').add({
+//         firstName,
+//         lastName,
+//         phone,
+//         gender,
+//         bio
+//     }).then(function(docRef) {
+//         dispatch(updateUserSuccess(docRef));
+//     })
+//         .catch(function(error) {
+//             dispatch(updateUserFailed(error.toString()));
+//         });
+// }
+//
+// const updateDetails = ({uid, firstName, lastName, phone, gender, bio})=>dispatch =>{
+//     db.collection('users').add({
+//         firstName,
+//         lastName,
+//         phone,
+//         gender,
+//         bio
+//     }).then(function(docRef) {
+//         dispatch(updateUserSuccess(docRef));
+//     })
+//         .catch(function(error) {
+//             dispatch(updateUserFailed(error.toString()));
+//         });
+// }
