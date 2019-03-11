@@ -114,7 +114,7 @@ export const updateUser = (details) => dispatch => {
     userRef.get()
         .then(doc => {
             if (!doc.exists) {
-                db.collection('users').add({
+                db.collection('users').doc(uid).set({
                     firstName,
                     lastName,
                     phone,
