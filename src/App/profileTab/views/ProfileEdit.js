@@ -190,6 +190,7 @@ class ProfileEdit extends React.Component {
                             <Item floatingLabel>
                                 <Label>Bio </Label>
                                 <Input
+                                    style={styles.textArea}
                                     onChangeText={(bio) => this.setState({bio})}
                                     autoCorrect={false}
                                     value={bio}
@@ -219,6 +220,10 @@ const styles = StyleSheet.create({
     errorMessage: {
         color: 'red',
         fontSize: 10
+    },
+    textArea: {
+        fontSize: 12,
+        color: '#464D53'
     }
 });
 const mapStateToProps = ({auth}) => {
