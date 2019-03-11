@@ -75,7 +75,7 @@ const Email = ({containerStyle, name, icon, email, rightIcon}) => (
                 </View>
             </View>
 
-            { rightIcon.length > 0 ?
+            { rightIcon ?
                 <View style={styles.smsRow}>
                     <Icon
                         name={rightIcon}
