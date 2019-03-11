@@ -75,7 +75,7 @@ class ProfileDetails extends React.Component {
 
                     <ProfileItem field={phone} name='Mobile' icon='call' rightIcon="textsms"/>
 
-                    <ProfileItem field={gender} name='Gender' icon='wc' rightIcon="textsms"/>
+                    <ProfileItem field={gender} name='Gender' icon='wc' />
                 </View>
 
                 <ActionButton buttonColor="rgba(231,76,60,1)">
