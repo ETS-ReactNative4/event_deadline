@@ -41,7 +41,7 @@ class ProfileDetails extends React.Component {
                                 style={styles.userImage}
                                 source={require('../../../../assets/avatar.jpg')}
                             />
-                            <Text style={styles.userNameText}>John Doe</Text>
+                            <Text style={styles.userNameText}>{firstName} {lastName}</Text>
                             <View style={styles.userAddressRow}>
                                 <View>
                                     <Icon
@@ -60,8 +60,7 @@ class ProfileDetails extends React.Component {
                     </ImageBackground>
                     <View style={styles.userBioRow}>
                         <Text style={styles.userBioText}>
-                            Lead programmer with a track record of incorporating user and business requirements into
-                            cost-effective, secure and user-friendly solutions known for scalability and durability
+                            {bio}
                         </Text>
                     </View>
 
