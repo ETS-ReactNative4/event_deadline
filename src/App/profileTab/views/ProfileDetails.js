@@ -135,7 +135,9 @@ const styles = StyleSheet.create({
     },
 });
 
-const mapStateToProps = (state) => {
-    return {}
+const mapStateToProps = ({auth}) => {
+    return {
+        auth
+    }
 }
 export default connect(mapStateToProps)(ProfileDetails);
