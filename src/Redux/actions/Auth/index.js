@@ -143,7 +143,7 @@ export const updateUser = (details) => dispatch => {
             }
         })
         .catch(error => {
-
+            dispatch(updateUserFailed(error.toString()));
         })
 
 
