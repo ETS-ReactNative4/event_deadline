@@ -51,7 +51,7 @@ class ProfileEdit extends React.Component {
             );
         }
 
-        if(auth.userDetails !==prevProps.auth.userDetails) this.props.navigation.goBack();
+        if(auth.userDetails !== prevProps.auth.userDetails) this.props.navigation.goBack();
     }
 
     userIsValid() {

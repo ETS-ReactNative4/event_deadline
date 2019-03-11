@@ -16,6 +16,10 @@ import ActionButton from 'react-native-action-button';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
 export default class ProfileDetails extends React.Component {
+    constructor(props){
+        super(props);
+        this.state ={}
+    }
     componentDidMount() {
 
     }
