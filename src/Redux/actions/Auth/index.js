@@ -39,13 +39,6 @@ export const logoutUserSuccess = () => {
     }
 };
 
-export const checkingAuthState = ()=>{
-
-};
-
-export const finishCheckingAuthState = ()=>{
-
-};
 
 
 export const loginUser = ({email, password}) => dispatch => {
