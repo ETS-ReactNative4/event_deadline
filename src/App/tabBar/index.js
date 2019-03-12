@@ -70,8 +70,10 @@ class TabBarMain extends Component {
     }
 
     render() {
-        const {isLoggedIn} = this.props.auth;
-        if (!isLoggedIn) {
+        const {isLoggedIn, loadingAuthStatus} = this.props.auth;
+        if (loadingAuthStatus) {
+
+        } else if (!isLoggedIn) {
             return (
                 <AuthTabBarNavigation/>
             )
