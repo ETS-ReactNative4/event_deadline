@@ -2,6 +2,7 @@
  * Created by Raphael Karanja on 2019-03-05.
  */
 import {
+    CHECKING_AUTH_STATE,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAILED,
     CREATE_USER_SUCCESS,
@@ -17,6 +18,7 @@ import {
 
 let initialState = {
     isLoggedIn: false,
+    loadingAuthStatus: false,
     createUserError: '',
     userId: '',
     updateError: '',
@@ -27,13 +29,15 @@ let initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
+        case CHECKING_AUTH_STATE:
+            return {...state, loadingAuthStatus: true}
         case LOGIN_USER_SUCCESS :
             let user = {};
             user.email = action.user.email;
             user.uid = action.user.uid
-            return {...state, isLoggedIn: true, userId: action.user.uid, user: Object.assign({}, user)};
+            return {...state, isLoggedIn: true, userId: action.user.uid, user: Object.assign({}, user), loadingAuthStatus: false};
         case LOGOUT_USER_FAILED:
-            return {...state, isLoggedIn: false, userId: ''};
+            return {...state, isLoggedIn: false, userId: '', loadingAuthStatus: false};
         case LOGOUT_USER_SUCCESS :
             return {...state, isLoggedIn: false, userId: ''};
         case CREATE_USER_SUCCESS :
