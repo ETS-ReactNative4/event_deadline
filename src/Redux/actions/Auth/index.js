@@ -2,6 +2,7 @@
  * Created by Raphael Karanja on 2019-03-05.
  */
 import {
+    CHECKING_AUTH_STATE,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAILED,
     CREATE_USER_SUCCESS,
@@ -38,14 +39,25 @@ export const logoutUserSuccess = () => {
     }
 };
 
+export const checkingAuthState = ()=>{
+
+};
+
+export const finishCheckingAuthState = ()=>{
+
+};
+
 
 export const loginUser = ({email, password}) => dispatch => {
+    dispatch({
+        type: CHECKING_AUTH_STATE
+    });
     authRef.signInWithEmailAndPassword(email, password)
         .then((resp) => {
             return dispatch(loginUserSuccess(resp));
         })
         .catch((error) => {
-            return dispatch(loginUserFail(error.toString()))
+            return dispatch(loginUserFail(error.toString()));
         });
 }
 

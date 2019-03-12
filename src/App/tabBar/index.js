@@ -11,7 +11,6 @@ import {connect} from 'react-redux';
 import Icon from "react-native-vector-icons/FontAwesome";
 import {bindActionCreators} from "redux";
 import {fetchUser} from '../../Redux/actions/Auth'
-import {Alert} from "react-native";
 
 const routeConfiguration = {
     Events: {
