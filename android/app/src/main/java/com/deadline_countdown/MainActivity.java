@@ -1,6 +1,10 @@
 package com.deadline_countdown;
 
 import com.facebook.react.ReactActivity;
+// react-native-splash-screen >= 0.3.1
+import org.devio.rn.splashscreen.SplashScreen; // here
+// react-native-splash-screen < 0.3.1
+import com.cboy.rn.splashscreen.SplashScreen; // here
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +16,11 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "deadline_countdown";
     }
+
+       @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            SplashScreen.show(this);  // here
+            super.onCreate(savedInstanceState);
+        }
+        // ...other code
 }

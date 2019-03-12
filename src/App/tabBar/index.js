@@ -11,6 +11,7 @@ import {connect} from 'react-redux';
 import Icon from "react-native-vector-icons/FontAwesome";
 import {bindActionCreators} from "redux";
 import {fetchUser} from '../../Redux/actions/Auth'
+import SplashScreen from 'react-native-splash-screen';
 
 const routeConfiguration = {
     Events: {
@@ -67,13 +68,14 @@ class TabBarMain extends Component {
         if (this.props.auth.isLoggedIn && JSON.stringify(prevProps.auth.userDetails.firstName) === JSON.stringify(this.props.auth.userDetails.firstName)) {
             this.props.fetchUser(this.props.auth.userId);
         }
+        if (!this.props.auth.loadingAuthStatus) {
+            SplashScreen.hide();
+        }
     }
 
     render() {
-        const {isLoggedIn, loadingAuthStatus} = this.props.auth;
-        if (loadingAuthStatus) {
-
-        } else if (!isLoggedIn) {
+        const {isLoggedIn} = this.props.auth;
+        if (!isLoggedIn) {
             return (
                 <AuthTabBarNavigation/>
             )
