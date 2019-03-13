@@ -70,6 +70,8 @@ class TabBarMain extends Component {
         }
         if (!this.props.auth.loadingAuthStatus) {
             SplashScreen.hide();
+        }else{
+            SplashScreen.show();
         }
     }
 
