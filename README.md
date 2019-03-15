@@ -6,5 +6,5 @@
 ## Authentication
 Using the App one can create a user's account and access the auth functions. 
 
-
- More description coming soon...
+## Events
+More description coming soon...
