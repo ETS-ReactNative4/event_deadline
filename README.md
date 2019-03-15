@@ -10,4 +10,6 @@ Using the App one can create a user's account and access the auth functions.
 After authentication, one can access their profile and are provided with the options to update their profile.
 
 ## Events
+Description on events coming soon....
+
 More description coming soon...
