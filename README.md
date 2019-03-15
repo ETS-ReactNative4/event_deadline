@@ -3,4 +3,8 @@
 
 #### Mobile Deadine is a simple application built with React Native and uses Firebase auth. The application allows one to create a list of activities and their deadlines which will display with a timer until the event elapses.
 
-More description coming soon...
+## Authentication
+Using the App one can create a user's account and access the auth functions. 
+
+
+ More description coming soon...
